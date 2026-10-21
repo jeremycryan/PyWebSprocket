@@ -55,12 +55,12 @@ while True:
     s.send(type="position", x=3, y=5)  # Sends a packet from arbitrary keyword arguments
 ```
 
-`Socket.get` returns a list of all packets that have been received since
+`WebSprocket.get` returns a list of all packets that have been received since
 it was last called.
 
-`Socket.send_packet` sends a packet to the connected WebServo.
+`WebSprocket.send_packet` sends a packet to the connected WebServo.
 
-`Socket.send` constructs a packet directly from keyword arguments.
+`WebSprocket.send` constructs a packet directly from keyword arguments.
 
 ## Servos
 The `WebServo` object acts as a central server which can accept multiple
@@ -76,9 +76,15 @@ while not game_over:
         client_id = packet.get(Packet.CLIENT_ID)  # Server tags packets with unique client ID if you need it
         my_server.process_packet(client_id, packet)
         
-s.sendall(event="gameOver", winner="plasmastarfish")  # Send data to all clients
+s.send_all(event="gameOver", winner="plasmastarfish")  # Send data to all clients
 s.send(0, message="You won!")  # Send a message to one client ID
 ```
+
+`WebServo.get` returns a list of all packets that have been received since it was last called.
+
+`WebServo.send` sends a packet to a single client from keyword arguments.
+
+`WebServo.send_all` sends a packet to every connected WebSprocket from keyword arguments.
 
 ## ngrok tunnel setup
 If you don't know where to start:
