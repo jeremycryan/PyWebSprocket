@@ -116,4 +116,7 @@ Here's how to get started with the test scripts and ngrok:
 - Every 20 seconds, the server will send a heartbeat message to the client.
 
 ## Example application
-Coming soon...?
+
+Used for Lexi Chameleon, a game about changing words in famous texts without your friends noticing.
+- Play for free on Itch.io: [https://plasmastarfish.itch.io/lexi-chameleon](https://plasmastarfish.itch.io/lexi-chameleon)
+- View the source code: [https://github.com/jeremycryan/LD60](https://github.com/jeremycryan/LD60)
